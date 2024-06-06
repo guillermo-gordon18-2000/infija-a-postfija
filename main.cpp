@@ -21,30 +21,31 @@
   Compartido para  casicodigo.blogspot.com
 */
 
-#include<iostream>
-#include<cstdlib>
-#include<stdio.h>
-#include<string.h>
+
+#include <iostream>
+#include <cstdlib>
+#include <stdio.h>
+#include <string.h>
 #define max 50
 
 using namespace std;
 
-struct nodo {     //ESTRUCTURA DE LA PILA
-       char palabra;
-       struct nodo *sgte;
-       };
+struct nodo { // ESTRUCTURA DE LA PILA
+    char palabra;
+    struct nodo *sgte;
+};
 
-typedef struct nodo *Ptrpila; //definimos estructura tipo pila
-typedef struct nodo *Tlista; //definimos estructura tipo lista
+typedef struct nodo *Ptrpila; // definimos estructura tipo pila
+typedef struct nodo *Tlista;  // definimos estructura tipo lista
 
-void push(Ptrpila &,char);
+void push(Ptrpila &, char);
 char pop(Ptrpila &);
-void agregar_atras(Tlista &,char);
+void agregar_atras(Tlista &, char);
 void destruir(Ptrpila &);
-int  prioridad_infija(char );
-int  prioridad_pila(char );
-void imprimir( Tlista &);
-void balanceoSimbolos( Ptrpila &, char []);
+int prioridad_infija(char);
+int prioridad_pila(char);
+void imprimir(Tlista &);
+void balanceoSimbolos(Ptrpila &, char[]);
 
 /*                 Funcion Principal
 -----------------------------------------------------*/
@@ -55,57 +56,80 @@ int main(void)
     Tlista lista = NULL;
     char cad[max], c, x;
     int tam;
+    int opcion;
 
     system("color 0b");
 
-    cout << "CONVERSION DE EXPRESIONES MATEMATICAS DE INFIJA A POSTFIJA\n\n";
     do {
-        cout << "INGRESE EXPRESION: ";
-        cin.getline(cad, max);
-        if (M != NULL)
-            destruir(M);
-        balanceoSimbolos(M, cad); // verificamos si los simbolos de agrupacion estan correctamente valanceados
-    } while (M != NULL);
+        cout << "MENU\n";
+        cout << "1. Convertir expresion infija a postfija\n";
+        cout << "2. Salir\n";
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
+        cin.ignore(); // Limpiar el buffer de entrada
 
-    tam = strlen(cad);
-    for (int i = 0; i < tam; i++) {
-        if ((cad[i] >= 49 && cad[i] <= 57) || (cad[i] >= 97 && cad[i] <= 122)) // validado para numeros de 1-9 y letras
-            agregar_atras(lista, cad[i]);
-        if (cad[i] == '+' || cad[i] == '-' || cad[i] == '*' || cad[i] == '/' || cad[i] == '(' || cad[i] == '^') {
-            if (p == NULL)
-                push(p, cad[i]);
-            else {
-                if (prioridad_infija(cad[i]) > prioridad_pila(p->palabra)) // compara prioridad de operadores
-                    push(p, cad[i]);
-                else {
-                    if (prioridad_infija(cad[i]) == prioridad_pila(p->palabra)) {
-                        c = pop(p);
-                        agregar_atras(lista, c);
+        switch (opcion) {
+        case 1:
+            cout << "CONVERSION DE EXPRESIONES MATEMATICAS DE INFIJA A POSTFIJA\n\n";
+            do {
+                cout << "INGRESE EXPRESION: ";
+                cin.getline(cad, max);
+                if (M != NULL)
+                    destruir(M);
+                balanceoSimbolos(M, cad); // verificamos si los simbolos de agrupacion estan correctamente balanceados
+            } while (M != NULL);
+
+            tam = strlen(cad);
+            for (int i = 0; i < tam; i++) {
+                if ((cad[i] >= 49 && cad[i] <= 57) || (cad[i] >= 97 && cad[i] <= 122)) // validado para numeros de 1-9 y letras
+                    agregar_atras(lista, cad[i]);
+                if (cad[i] == '+' || cad[i] == '-' || cad[i] == '*' || cad[i] == '/' || cad[i] == '(' || cad[i] == '^') {
+                    if (p == NULL)
                         push(p, cad[i]);
-                    }
                     else {
-                        c = pop(p);
-                        agregar_atras(lista, c);
+                        if (prioridad_infija(cad[i]) > prioridad_pila(p->palabra)) // compara prioridad de operadores
+                            push(p, cad[i]);
+                        else {
+                            if (prioridad_infija(cad[i]) == prioridad_pila(p->palabra)) {
+                                c = pop(p);
+                                agregar_atras(lista, c);
+                                push(p, cad[i]);
+                            }
+                            else {
+                                c = pop(p);
+                                agregar_atras(lista, c);
+                            }
+                        }
                     }
                 }
+                if (cad[i] == ')') {
+                    while (p->palabra != '(' && p != NULL) { // desempilamos y agregamos a lista
+                        c = pop(p);
+                        agregar_atras(lista, c);
+                    }
+                    if (p->palabra == '(')
+                        c = pop(p);
+                }
             }
-        }
-        if (cad[i] == ')') {
-            while (p->palabra != '(' && p != NULL) { // desempilamos y agregamos a lista
+            while (p != NULL) { // si es que la pila aun no esta nula pasamos los operadores a lista
                 c = pop(p);
                 agregar_atras(lista, c);
             }
-            if (p->palabra == '(')
-                c = pop(p);
-        }
-    }
-    while (p != NULL) { // si es que la pila aun no esta nula pasamos los operadores a lista
-        c = pop(p);
-        agregar_atras(lista, c);
-    }
 
-    imprimir(lista);
-    system("pause");
+            imprimir(lista);
+            break;
+
+        case 2:
+            cout << "Saliendo del programa...\n";
+            break;
+
+        default:
+            cout << "Opcion invalida. Por favor, intente nuevamente.\n";
+            break;
+        }
+
+    } while (opcion != 2);
+
     return 0;
 }
 
@@ -129,7 +153,7 @@ char pop(Ptrpila &p)
     n = p->palabra;
     aux = p;
     p = p->sgte;
-    delete(aux);
+    delete (aux);
     return n;
 }
 
@@ -138,7 +162,7 @@ char pop(Ptrpila &p)
 funcion para agregar caracter a la lista de salida*/
 void agregar_atras(Tlista &lista, char a)
 {
-    Tlista t, q = new(struct nodo);
+    Tlista t, q = new (struct nodo);
 
     q->palabra = a;
     q->sgte = NULL;
@@ -165,7 +189,7 @@ void destruir(Ptrpila &M)
         while (M != NULL) {
             aux = M;
             M = M->sgte;
-            delete(aux);
+            delete (aux);
         }
     }
 }
