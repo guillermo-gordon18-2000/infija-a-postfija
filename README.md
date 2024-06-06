@@ -18,21 +18,47 @@
 *** para contributors-url, forks-url, etc. Esta es una sintaxis opcional y concisa que puedes usar.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+ <p align="center">
+    <a href="https://codeclimate.com/github/arifszn/gitprofile/maintainability">
+      <img src="https://api.codeclimate.com/v1/badges/c60f42d7d0b61bd33e98/maintainability" />
+    </a>
+    <a href="https://github.com/arifszn/gitprofile/actions/workflows/test-deploy.yml">
+      <img src="https://github.com/arifszn/gitprofile/actions/workflows/test-deploy.yml/badge.svg" />
+    </a>
+    <a href="https://github.com/arifszn/gitprofile/issues">
+      <img src="https://img.shields.io/github/issues/arifszn/gitprofile"/>
+    </a>
+    <a href="https://github.com/arifszn/gitprofile/stargazers">
+      <img src="https://img.shields.io/github/stars/arifszn/gitprofile"/>
+    </a>
+    <a href="https://github.com/arifszn/gitprofile/network/members">
+      <img src="https://img.shields.io/github/forks/arifszn/gitprofile"/>
+    </a>
+    <a href="https://github.com/arifszn/gitprofile/blob/main/package-lock.json">
+      <img src="https://img.shields.io/snyk/vulnerabilities/github/arifszn/gitprofile"/>
+    </a>
+    <a href="https://github.com/arifszn/gitprofile/blob/main/CONTRIBUTING.md">
+      <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/>
+    </a>
+    <a href="https://github.com/arifszn/gitprofile/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/arifszn/gitprofile"/>
+    </a>
+    <a href="https://www.buymeacoffee.com/arifszn">
+      <img src="https://img.shields.io/badge/sponsor-buy%20me%20a%20coffee-yellow?logo=buymeacoffee"/>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20the%20portfolio%20builder.%20Create%20an%20automatic%20portfolio%20based%20on%20GitHub%20profile.&url=https://github.com/arifszn/gitprofile&hashtags=javascript,opensource,js,webdev,developers">
+      <img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Farifszn%2Fgitprofile"/>
+    </a>
+  </p>
 
 
 
 <!-- LOGO DEL PROYECTO -->
 <br />
 <div align="center">
-  <a href="https://github.com/tu_usuario/tu_repositorio">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  <a href="https://github.com/guillermo-gordon18-2000/infija-a-postfija">
+    <img src="https://via.placeholder.com/80" alt="Logo" width="80" height="80">
+</a>
 
   <h3 align="center">Conversión de Expresiones Matemáticas de Infija a Postfija</h3>
 
