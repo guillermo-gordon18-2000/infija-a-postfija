@@ -19,14 +19,14 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
  <p align="center">
-    <a href="https://codeclimate.com/github/arifszn/gitprofile/maintainability">
+    <a href="https://codeclimate.com/github/guillermo-gordon18-2000/gitprofile/maintainability">
       <img src="https://api.codeclimate.com/v1/badges/c60f42d7d0b61bd33e98/maintainability" />
     </a>
-    <a href="https://github.com/arifszn/gitprofile/actions/workflows/test-deploy.yml">
-      <img src="https://github.com/arifszn/gitprofile/actions/workflows/test-deploy.yml/badge.svg" />
+    <a href="https://github.com/guillermo-gordon18-2000/gitprofile/actions/workflows/test-deploy.yml">
+      <img src="https://github.com/guillermo-gordon18-2000/gitprofile/actions/workflows/test-deploy.yml/badge.svg" />
     </a>
-    <a href="https://github.com/arifszn/gitprofile/issues">
-      <img src="https://img.shields.io/github/issues/arifszn/gitprofile"/>
+    <a href="https://github.com/guillermo-gordon18-2000/gitprofile/issues">
+      <img src="https://img.shields.io/github/issues/guillermo-gordon18-2000/gitprofile"/>
     </a>
     <a href="https://github.com/arifszn/gitprofile/stargazers">
       <img src="https://img.shields.io/github/stars/arifszn/gitprofile"/>
