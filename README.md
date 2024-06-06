@@ -43,6 +43,9 @@
     <a>
       <img src="https://img.shields.io/github/license/arifszn/gitprofile"/>
     </a>
+    <a>
+      <img src="https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34"/>
+    </a>
     <a href="https://www.buymeacoffee.com/arifszn">
       <img src="https://img.shields.io/badge/sponsor-buy%20me%20a%20coffee-yellow?logo=buymeacoffee"/>
     </a>
