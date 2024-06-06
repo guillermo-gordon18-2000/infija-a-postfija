@@ -85,16 +85,12 @@
 
 [![Captura de Pantalla del Producto][product-screenshot]](https://example.com)
 
-Hay muchas plantillas geniales de README disponibles en GitHub; sin embargo, no encontré una que realmente se adaptara a mis necesidades, así que creé esta mejorada. Quiero crear una plantilla de README tan increíble que será la última que necesitarás -- Creo que esta es.
+### Características del Proyecto:
+* **Conversión de Notación Infija a Postfija:** Convierte expresiones matemáticas de notación infija a postfija para su fácil evaluación por computadoras.
+* **Verificación de Balanceo de Símbolos:** Verifica el balanceo correcto de los paréntesis y otros símbolos de agrupación en las expresiones.
+* **Cálculo de Prioridad de Operadores:** Maneja la prioridad de los operadores matemáticos tanto en la notación infija como en la pila durante la conversión.
+* **Estructura de Datos Eficiente:** Utiliza estructuras de datos eficientes como pilas y listas para manejar la conversión y el almacenamiento temporal de datos.
 
-Aquí tienes por qué:
-* Tu tiempo debe estar enfocado en crear algo increíble. Un proyecto que resuelva un problema y ayude a otros.
-* No deberías estar haciendo las mismas tareas una y otra vez como crear un README desde cero.
-* Debes implementar principios DRY en el resto de tu vida :smile:
-
-Por supuesto, ninguna plantilla servirá para todos los proyectos ya que tus necesidades pueden ser diferentes. Así que estaré agregando más en el futuro cercano. También puedes sugerir cambios bifurcando este repositorio y creando un pull request o abriendo un issue. ¡Gracias a todas las personas que han contribuido a expandir esta plantilla!
-
-Usa el `BLANK_README.md` para comenzar.
 
 <p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
@@ -133,8 +129,11 @@ El código define varias funciones y estructuras de datos para manejar la pila y
 4. Ingresar la expresión:
 
 Cuando el programa pida la expresión, ingresa una expresión en notación infija. Por ejemplo:
-   
-    ```sh
-    plaintext=(a+b)*c-(d-e)/(f+g)
+
+    
+           plaintext=(a+b)*c-(d-e)/(f+g)
 
 La salida en notación postfija será:ab+c*de-fg+/
+
+
+
