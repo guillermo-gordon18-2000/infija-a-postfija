@@ -19,37 +19,12 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
  <p align="center">
-    <a href="https://codeclimate.com/github/guillermo-gordon18-2000/gitprofile/maintainability">
-      <img src="https://api.codeclimate.com/v1/badges/c60f42d7d0b61bd33e98/maintainability" />
-    </a>
-    <a href="https://github.com/guillermo-gordon18-2000/gitprofile/actions/workflows/test-deploy.yml">
-      <img src="https://github.com/guillermo-gordon18-2000/gitprofile/actions/workflows/test-deploy.yml/badge.svg" />
-    </a>
-    <a href="https://github.com/guillermo-gordon18-2000/gitprofile/issues">
-      <img src="https://img.shields.io/github/issues/guillermo-gordon18-2000/gitprofile"/>
-    </a>
-    <a href="https://github.com/arifszn/gitprofile/stargazers">
-      <img src="https://img.shields.io/github/stars/arifszn/gitprofile"/>
-    </a>
-    <a href="https://github.com/arifszn/gitprofile/network/members">
-      <img src="https://img.shields.io/github/forks/arifszn/gitprofile"/>
-    </a>
-    <a href="https://github.com/arifszn/gitprofile/blob/main/package-lock.json">
-      <img src="https://img.shields.io/snyk/vulnerabilities/github/arifszn/gitprofile"/>
-    </a>
-    <a href="https://github.com/arifszn/gitprofile/blob/main/CONTRIBUTING.md">
-      <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/>
-    </a>
-    <a>
-      <img src="https://img.shields.io/github/license/arifszn/gitprofile"/>
-    </a>
+   
     <a>
       <img src="https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34"/>
     </a>
-    <a href="https://www.buymeacoffee.com/arifszn">
-      <img src="https://img.shields.io/badge/sponsor-buy%20me%20a%20coffee-yellow?logo=buymeacoffee"/>
-    </a>
-   ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
+    
+   
   </p>
 
 
