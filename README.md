@@ -19,11 +19,12 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
  <p align="center">
-   
     <a>
       <img src="https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34"/>
     </a>
-    
+    <a>
+      <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA"/>
+    </a>
    
   </p>
 
