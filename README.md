@@ -43,7 +43,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/guillermo-gordon18-2000/infija-a-postfija">
-    <img src="https://img.freepik.com/vector-premium/ilustracion-vectorial-color-lineal-ai-chipsolid_685085-30438.jpg?w=740" alt="Logo" width="80" height="80">
+    <img src="https://www.freepik.es/icono/upc_707576#fromView=search&page=1&position=10&uuid=d54b8e73-a335-4441-b886-142d2495696a" alt="Logo" width="80" height="80">
 </a>
 
   <h3 align="center">Conversión de Expresiones Matemáticas de Infija a Postfija</h3>
