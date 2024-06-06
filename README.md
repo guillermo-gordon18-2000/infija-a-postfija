@@ -133,6 +133,7 @@ El código define varias funciones y estructuras de datos para manejar la pila y
 4. Ingresar la expresión:
 
 Cuando el programa pida la expresión, ingresa una expresión en notación infija. Por ejemplo:
+   
     ```sh
     plaintext=(a+b)*c-(d-e)/(f+g)
 
