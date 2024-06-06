@@ -22,10 +22,14 @@
 */
 
 
+
+
 #include <iostream>
 #include <cstdlib>
 #include <stdio.h>
 #include <string.h>
+#include <iomanip>
+#include <stack>
 #define max 50
 
 using namespace std;
@@ -46,6 +50,21 @@ int prioridad_infija(char);
 int prioridad_pila(char);
 void imprimir(Tlista &);
 void balanceoSimbolos(Ptrpila &, char[]);
+string postfijaAInfija(const string &);
+
+string infijaAPrefija(const string &);
+
+
+const int ANCHO_CONSOLA = 80;
+
+void printCentered(string text) {
+    int padding = (ANCHO_CONSOLA - text.length()) / 2;
+    cout << setw(padding) << "" << text << endl;
+}
+
+void printMenuOption(string option, int width) {
+    cout << setw((ANCHO_CONSOLA - width) / 2) << "" << option << endl;
+}
 
 /*                 Funcion Principal
 -----------------------------------------------------*/
@@ -61,18 +80,27 @@ int main(void)
     system("color 0b");
 
     do {
-        cout << "MENU\n";
-        cout << "1. Convertir expresion infija a postfija\n";
-        cout << "2. Salir\n";
-        cout << "Ingrese una opcion: ";
+        system("cls"); // Limpiar la pantalla (Windows)
+        printCentered("=====================================");
+        printCentered("          MENU PRINCIPAL");
+        printCentered("=====================================");
+        printMenuOption("1. Convertir expresion infija a postfija", 43);
+        printMenuOption("2. Convertir expresion infija a prefija", 42); 
+        printMenuOption("3. Salir", 6);
+        printCentered("=====================================");
+        printCentered("Ingrese una opcion: ");
+        cout << setw((ANCHO_CONSOLA - 1) / 2) << "";
         cin >> opcion;
         cin.ignore(); // Limpiar el buffer de entrada
 
         switch (opcion) {
         case 1:
-            cout << "CONVERSION DE EXPRESIONES MATEMATICAS DE INFIJA A POSTFIJA\n\n";
+            system("cls"); // Limpiar la pantalla (Windows)
+            printCentered("CONVERSION DE EXPRESIONES MATEMATICAS DE INFIJA A POSTFIJA");
+            printCentered("");
             do {
-                cout << "INGRESE EXPRESION: ";
+                printCentered("INGRESE EXPRESION: ");
+                cout << setw((ANCHO_CONSOLA - 1) / 2) << "";
                 cin.getline(cad, max);
                 if (M != NULL)
                     destruir(M);
@@ -117,18 +145,34 @@ int main(void)
             }
 
             imprimir(lista);
+            system("pause");
             break;
 
-        case 2:
-            cout << "Saliendo del programa...\n";
+    case 2:
+    system("cls"); // Limpiar la pantalla (Windows)
+    printCentered("CONVERSION DE EXPRESIONES MATEMATICAS DE INFIXA A PREFIJA");
+    printCentered("");
+    printCentered("INGRESE EXPRESION: ");
+    cout << setw((ANCHO_CONSOLA - 1) / 2) << "";
+    cin.getline(cad, max);
+    printCentered("NOTACION PREFIJA");
+    printCentered("");
+    cout << setw((ANCHO_CONSOLA - infijaAPrefija(cad).length()) / 2) << "" << infijaAPrefija(cad) << endl << endl;
+    system("pause");
+    break;
+
+        case 3:
+            system("cls"); // Limpiar la pantalla (Windows)
+            printCentered("Saliendo del programa...");
             break;
 
         default:
-            cout << "Opcion invalida. Por favor, intente nuevamente.\n";
+            system("cls"); // Limpiar la pantalla (Windows)
+            printCentered("Opcion invalida. Por favor, intente nuevamente.");
             break;
         }
 
-    } while (opcion != 2);
+    } while (opcion != 3);
 
     return 0;
 }
@@ -244,7 +288,8 @@ void imprimir(Tlista &lista)
     aux = lista;
 
     if (lista != NULL) {
-        cout << "\t\nNOTACION POSTFIJA\n\n";
+        printCentered("NOTACION POSTFIJA");
+        printCentered("");
         while (aux != NULL) {
             cout << aux->palabra;
             aux = aux->sgte;
@@ -288,8 +333,100 @@ void balanceoSimbolos(Ptrpila &p, char cad[])
     }
 
     if (p == NULL)
-        cout << "\n\tBalanceo CORRECTO..." << endl << endl;
+        printCentered("Balanceo CORRECTO...");
     else
-        cout << "\n\t Balanceo INCORRECTO, faltan simbolos de agrupacion..." << endl;
+        printCentered("Balanceo INCORRECTO, faltan simbolos de agrupacion...");
+}
+
+/*                Convertir de Postfija a Infija
+---------------------------------------------------------------------*/
+string postfijaAInfija(const string &exp)
+{
+    struct nodoString {
+        string palabra;
+        struct nodoString *sgte;
+    };
+    typedef struct nodoString *PtrpilaString;
+    PtrpilaString p = NULL;
+
+    int i = 0;
+    char token;
+    string op1, op2, temp;
+
+    while (exp[i] != '\0') {
+        token = exp[i];
+        if (isalnum(token)) {
+            PtrpilaString q = new struct nodoString;
+            q->palabra = string(1, token);
+            q->sgte = p;
+            p = q;
+        }
+        else {
+            op1 = p->palabra;
+            p = p->sgte;
+            op2 = p->palabra;
+            p = p->sgte;
+
+            temp = "(" + op2 + token + op1 + ")";
+            PtrpilaString q = new struct nodoString;
+            q->palabra = temp;
+            q->sgte = p;
+            p = q;
+        }
+        i++;
+    }
+
+    if (p != NULL) {
+        string result = p->palabra;
+        delete p;
+        // Eliminar los paréntesis adicionales
+        while (result.front() == '(' && result.back() == ')') {
+            result = result.substr(1, result.length() - 2);
+        }
+        return result;
+    }
+    return "";
+}
+
+
+/*                Convertir de Infija a Sufija
+---------------------------------------------------------------------*/
+
+/*                Convertir de Infija a Prefija
+---------------------------------------------------------------------*/
+string infijaAPrefija(const string &exp)
+{
+    stack<char> operadores;
+    string resultado;
+    string expInvertida = string(exp.rbegin(), exp.rend()); // Invertir la expresión de infijo a prefijo
+
+    for (char token : expInvertida) {
+        if (isalnum(token)) {
+            resultado += token;
+        } else if (token == ')') {
+            operadores.push(token);
+        } else if (token == '(') {
+            while (!operadores.empty() && operadores.top() != ')') {
+                resultado += operadores.top();
+                operadores.pop();
+            }
+            if (!operadores.empty() && operadores.top() == ')') {
+                operadores.pop();
+            }
+        } else {
+            while (!operadores.empty() && prioridad_infija(token) < prioridad_pila(operadores.top())) {
+                resultado += operadores.top();
+                operadores.pop();
+            }
+            operadores.push(token);
+        }
+    }
+
+    while (!operadores.empty()) {
+        resultado += operadores.top();
+        operadores.pop();
+    }
+
+    return string(resultado.rbegin(), resultado.rend()); // Invertir el resultado nuevamente
 }
 
