@@ -123,17 +123,17 @@ El código define varias funciones y estructuras de datos para manejar la pila y
    cd tu_repositorio
 
 2. Compilar el programa:
-  ```sh
-g++ -o infija_postfija main.cpp
+    ```sh
+      g++ -o infija_postfija main.cpp
 
 3. Ejecutar el programa:
-  ```sh
-./infija_postfija
+   ```sh
+   ./infija_postfija
 
 4. Ingresar la expresión:
 
 Cuando el programa pida la expresión, ingresa una expresión en notación infija. Por ejemplo:
-  ```sh
-plaintext=(a+b)*c-(d-e)/(f+g)
+    ```sh
+    plaintext=(a+b)*c-(d-e)/(f+g)
 
 La salida en notación postfija será:ab+c*de-fg+/
