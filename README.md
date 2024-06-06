@@ -85,18 +85,22 @@
     <li>
       <a href="#sobre-el-proyecto">Sobre el Proyecto</a>
       <ul>
+        <li><a href="#características-del-proyecto">Características del Proyecto</a></li>
         <li><a href="#construido-con">Construido Con</a></li>
       </ul>
     </li>
     <li>
-      <a href="#empezando">Empezando</a>
+      <a href="#requisitos">Requisitos</a>
+    </li>
+    <li>
+      <a href="#instrucciones-de-compilación-y-ejecución">Instrucciones de Compilación y Ejecución</a>
       <ul>
-        <li><a href="#prerrequisitos">Prerrequisitos</a></li>
-        <li><a href="#instalación">Instalación</a></li>
+        <li><a href="#clonar-el-repositorio">Clonar el Repositorio</a></li>
+        <li><a href="#compilar-el-programa">Compilar el Programa</a></li>
+        <li><a href="#ejecutar-el-programa">Ejecutar el Programa</a></li>
+        <li><a href="#ingresar-la-expresión">Ingresar la Expresión</a></li>
       </ul>
     </li>
-    <li><a href="#uso">Uso</a></li>
-    <li><a href="#hoja-de-ruta">Hoja de Ruta</a></li>
     <li><a href="#contribuyendo">Contribuyendo</a></li>
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -109,7 +113,7 @@
 <!-- SOBRE EL PROYECTO -->
 ## Sobre el Proyecto
 
-[![Captura de Pantalla del Producto][product-screenshot]](https://example.com)
+
 
 ### Características del Proyecto:
 * **Conversión de Notación Infija a Postfija:** Convierte expresiones matemáticas de notación infija a postfija para su fácil evaluación por computadoras.
