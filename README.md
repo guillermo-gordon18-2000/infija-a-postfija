@@ -1,3 +1,4 @@
+
 <!-- Mejora de compatibilidad del enlace de vuelta al inicio: Ver: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -18,21 +19,33 @@
 *** para contributors-url, forks-url, etc. Esta es una sintaxis opcional y concisa que puedes usar.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+ <p align="center">
+    <a>
+      <img src="https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34"/>
+    </a>
+    <a>
+      <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA"/>
+    </a>
+    <a>
+      <img src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white"/>
+    </a>
+
+   <a>
+      <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"/>
+    </a>
+      <a>
+      <img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white"/>
+    </a>
+  </p>
 
 
 
 <!-- LOGO DEL PROYECTO -->
 <br />
 <div align="center">
-  <a href="https://github.com/tu_usuario/tu_repositorio">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  <a href="https://github.com/guillermo-gordon18-2000/infija-a-postfija">
+    <img src="https://github.com/guillermo-gordon18-2000/infija-a-postfija/assets/83618044/43269209-6bba-40e3-af42-a0baaa0acdb1" alt="Logo" width="80" height="80">
+</a>
 
   <h3 align="center">Conversión de Expresiones Matemáticas de Infija a Postfija</h3>
 
@@ -59,18 +72,22 @@
     <li>
       <a href="#sobre-el-proyecto">Sobre el Proyecto</a>
       <ul>
+        <li><a href="#características-del-proyecto">Características del Proyecto</a></li>
         <li><a href="#construido-con">Construido Con</a></li>
       </ul>
     </li>
     <li>
-      <a href="#empezando">Empezando</a>
+      <a href="#requisitos">Requisitos</a>
+    </li>
+    <li>
+      <a href="#instrucciones-de-compilación-y-ejecución">Instrucciones de Compilación y Ejecución</a>
       <ul>
-        <li><a href="#prerrequisitos">Prerrequisitos</a></li>
-        <li><a href="#instalación">Instalación</a></li>
+        <li><a href="#clonar-el-repositorio">Clonar el Repositorio</a></li>
+        <li><a href="#compilar-el-programa">Compilar el Programa</a></li>
+        <li><a href="#ejecutar-el-programa">Ejecutar el Programa</a></li>
+        <li><a href="#ingresar-la-expresión">Ingresar la Expresión</a></li>
       </ul>
     </li>
-    <li><a href="#uso">Uso</a></li>
-    <li><a href="#hoja-de-ruta">Hoja de Ruta</a></li>
     <li><a href="#contribuyendo">Contribuyendo</a></li>
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -83,18 +100,14 @@
 <!-- SOBRE EL PROYECTO -->
 ## Sobre el Proyecto
 
-[![Captura de Pantalla del Producto][product-screenshot]](https://example.com)
 
-Hay muchas plantillas geniales de README disponibles en GitHub; sin embargo, no encontré una que realmente se adaptara a mis necesidades, así que creé esta mejorada. Quiero crear una plantilla de README tan increíble que será la última que necesitarás -- Creo que esta es.
 
-Aquí tienes por qué:
-* Tu tiempo debe estar enfocado en crear algo increíble. Un proyecto que resuelva un problema y ayude a otros.
-* No deberías estar haciendo las mismas tareas una y otra vez como crear un README desde cero.
-* Debes implementar principios DRY en el resto de tu vida :smile:
+### Características del Proyecto:
+* **Conversión de Notación Infija a Postfija:** Convierte expresiones matemáticas de notación infija a postfija para su fácil evaluación por computadoras.
+* **Verificación de Balanceo de Símbolos:** Verifica el balanceo correcto de los paréntesis y otros símbolos de agrupación en las expresiones.
+* **Cálculo de Prioridad de Operadores:** Maneja la prioridad de los operadores matemáticos tanto en la notación infija como en la pila durante la conversión.
+* **Estructura de Datos Eficiente:** Utiliza estructuras de datos eficientes como pilas y listas para manejar la conversión y el almacenamiento temporal de datos.
 
-Por supuesto, ninguna plantilla servirá para todos los proyectos ya que tus necesidades pueden ser diferentes. Así que estaré agregando más en el futuro cercano. También puedes sugerir cambios bifurcando este repositorio y creando un pull request o abriendo un issue. ¡Gracias a todas las personas que han contribuido a expandir esta plantilla!
-
-Usa el `BLANK_README.md` para comenzar.
 
 <p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
@@ -123,17 +136,22 @@ El código define varias funciones y estructuras de datos para manejar la pila y
    cd tu_repositorio
 
 2. Compilar el programa:
-
-g++ -o infija_postfija main.cpp
+    ```sh
+      g++ -o infija_postfija main.cpp
 
 3. Ejecutar el programa:
-
-./infija_postfija
+   ```sh
+   ./infija_postfija
 
 4. Ingresar la expresión:
 
 Cuando el programa pida la expresión, ingresa una expresión en notación infija. Por ejemplo:
 
-plaintext=(a+b)*c-(d-e)/(f+g)
+    
+    plaintext=(a+b)*c-(d-e)/(f+g)
 
 La salida en notación postfija será:ab+c*de-fg+/
+
+
+
+
