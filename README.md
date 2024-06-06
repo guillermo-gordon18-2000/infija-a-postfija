@@ -148,10 +148,11 @@ El código define varias funciones y estructuras de datos para manejar la pila y
 Cuando el programa pida la expresión, ingresa una expresión en notación infija. Por ejemplo:
 
     
+
     plaintext=(a+b)*c-(d-e)/(f+g)
 
-La salida en notación postfija será:ab+c*de-fg+/
 
+La salida en notación postfija será:ab+c*de-fg+/
 
 
 
