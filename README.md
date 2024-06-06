@@ -40,7 +40,7 @@
     <a href="https://github.com/arifszn/gitprofile/blob/main/CONTRIBUTING.md">
       <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/>
     </a>
-    <a href="https://github.com/arifszn/gitprofile/blob/main/LICENSE">
+    <a>
       <img src="https://img.shields.io/github/license/arifszn/gitprofile"/>
     </a>
     <a href="https://www.buymeacoffee.com/arifszn">
